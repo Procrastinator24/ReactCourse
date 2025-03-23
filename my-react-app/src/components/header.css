@@ -1,75 +1,51 @@
-/*Общая разметка*/
-.header-header {
+
+    /* Основные стили для хэдера */
+.header {
+    background-color: #4caf50; /* Зеленый цвет, как у природы */
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-top: 24px;
-    margin-bottom: 5%;
-
-    background-color: #E8E8E8;
-    width: 100%;
-    height: 65px;
-    border-radius: 10px;
-    /*padding: 10px 20px 10px 20px;*/
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-/*Редакт всех кнопок*/
-.headerButtons{
+
+/* Стили для логотипа */
+.header-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+    opacity: 0.9;
+}
+
+/* Стили для ссылок */
+.header-links {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-
-    justify-items: right;
-    height: 10vh;
-}
-/*Лого*/
-.projectName{
-    color:#73685D;
-    font-size: 27px;
-    cursor: pointer;
-    font-family: Montserrat-bold, sans-serif;
-    width: auto;
-    height: auto;
-    margin-right: 20%;
-
+    gap: 20px;
 }
 
-/*Основные кнопки*/
-.headerButton {
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 16px;
-    background-color: transparent;
-    /*border-radius: 30px;*/
-    /*width: 40%;*/
-    /*height: 100%;*/
-    /*margin: 0;*/
-    /*font-size: 0.8em;*/
-    /*font-weight: 500;*/
-    /*border-width: 2px;*/
-    /*color: black;*/
-    /*margin-left: 5%;*/
-
-}
-.chooseCatBtnHeader{
-    margin-right: 10%;
-    width: 62%;
-    min-width: 58%;
-    max-width: 63%;
-    height: 50%;
-    background-color: #B29B84;
-    border-radius: 100px;
-    color: white;
-}
-.logo {
-    width: 100%;
-    height: 100%;
-    padding-right: 50px;
-    cursor: pointer;
+.header-link {
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-
-
-
+.header-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}

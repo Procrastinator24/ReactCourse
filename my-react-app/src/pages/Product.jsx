@@ -36,27 +36,40 @@ function Product() {
 
     return(
 
-        <div>
-            <h1>{product[0].name}</h1>
-            <p>{product[0].description}</p>
-            <p>Price: {product[0].price}</p>
-            <button onClick={() => {
-                addToCart(product[0])
-            }}>Add to cart
-            </button>
-            <button onClick={() => {
-                if (cart.length === 0) {
-                    return console.log("Корзина пуста")
-                } else {
-                    return navigate("/cart")
-                }
-            }}>В корзину
-            </button>
-
-
+        <div className="product-page">
+            <div className="product-details">
+                <h1 className="product-title">{product[0].name}</h1>
+                <p className="product-description">{product[0].description}</p>
+                <p className="product-price">Цена: {product[0].price}$</p>
+                <div className="product-buttons">
+                    <button
+                        className="add-to-cart-button"
+                        onClick={() => addToCart(product[0])}
+                    >
+                        Добавить в корзину
+                    </button>
+                    <button
+                        className="go-to-cart-button"
+                        onClick={() => {
+                            if (cart.length === 0) {
+                                alert("Корзина пуста");
+                            } else {
+                                navigate("/cart");
+                            }
+                        }}
+                    >
+                        Перейти в корзину
+                    </button>
+                </div>
+            </div>
+            <div className="product-image-container">
+                <img
+                    className="product-image"
+                    src={product[0].img}
+                    alt={product[0].name}
+                />
+            </div>
         </div>
-    )
-
-}
-
+    );
+};
 export default Product;

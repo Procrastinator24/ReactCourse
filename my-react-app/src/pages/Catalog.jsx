@@ -62,30 +62,43 @@ function Catalog() {
 
     return(
 
-        <div className={"catalog"}>
-            <h1>Catalog</h1>
-            <h2>Категории</h2>
-            <ul className={"listOfthings"}>
-                <li onClick={()=>{
-                    fetchProducts()
-                }}>All products</li>
-                {categories.map((category)=> (
-                    <li key={category.id} onClick={() =>{
-                        fetchCategoriesProducts(category.id)
-                    }} >{category.name} </li>
-                ))}
-            </ul>
-            <h1>Продукты</h1>
-                <div className={"listOfthingsP"}>
-                    <Suspense fallback={<p>Loading...</p>}>
-                        {products.map((product) => (
-                        <Card {...product}/>))}
-                    </Suspense>
+        <div className="catalog">
+            <h1 className="catalog-title">Каталог товаров</h1>
+            <div className="catalog-content">
+                <div className="categories-section">
+                    <h2 className="categories-title">Категории</h2>
+                    <ul className="categories-list">
+                        <li
+                            className="category-item"
+                            onClick={fetchProducts}
+                        >
+                            Все товары
+                        </li>
+                        {categories.map((category) => (
+                            <li
+                                key={category.id}
+                                className="category-item"
+                                onClick={() => fetchCategoriesProducts(category.id)}
+                            >
+                                {category.name}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
+                <div className="products-section">
+                    <h2 className="products-title">Товары</h2>
+                    <div className="products-list">
+                        <Suspense fallback={<p className="loading">Загрузка...</p>}>
+                            {products.map((product) => (
+                                <Card key={product.id} {...product} />
+                            ))}
+                        </Suspense>
+                    </div>
+                </div>
+            </div>
         </div>
-
     );
+};
 
-}
 
 export default Catalog;

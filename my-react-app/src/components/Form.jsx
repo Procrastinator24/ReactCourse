@@ -54,7 +54,7 @@ function Form() {
 
 
     return (
-        <div>
+        <div className={"listOfthingsP1"}>
             <h2>{isLogin ? "Авторизация" : "Регистрация"}</h2>
             <form onSubmit={handleSubmit}>
                 {!isLogin &&

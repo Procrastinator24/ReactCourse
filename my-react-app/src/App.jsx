@@ -12,29 +12,32 @@ import Cart from "./pages/Cart.jsx";
 import Login from "./pages/login.jsx";
 import {CartProvider} from "./components/cartContext.jsx";
 import Appp from "./components/FeedBackForm.jsx";
+import {ThemeProvider} from "./components/ThemeContext.jsx";
 
 
 function App(){
 
     return (
         <>
-            <CartProvider>
-                <Header/>
-                <Routes>
-                    <Route path={"/login"} element={<Login/>}/>
-                    <Route path="/home" element={<Home/>}></Route>
-                    <Route path="/catalog" element={<Catalog />}/>
-                    <Route path="/product/:id" element={<Product />}>
-                    </Route>
-                    <Route path="/profile" element = {<UserProfile/>}>
-                        <Route path="/profile/edit" element={<UserProfileEdit/>}/>
-                    </Route>
-                    <Route path="/cart" element={<Cart/>}/>
-                    <Route path="/*" element=<HotFound/>/>
-                    <Route path="/feedback" element={<Appp/>}/>
-                </Routes>
-                <Footer/>
-            </CartProvider>
+            <ThemeProvider>
+                <CartProvider>
+                    <Header/>
+                    <Routes>
+                        <Route path={"/login"} element={<Login/>}/>
+                        <Route path="/home" element={<Home/>}></Route>
+                        <Route path="/catalog" element={<Catalog />}/>
+                        <Route path="/product/:id" element={<Product />}>
+                        </Route>
+                        <Route path="/profile" element = {<UserProfile/>}>
+                            <Route path="/profile/edit" element={<UserProfileEdit/>}/>
+                        </Route>
+                        <Route path="/cart" element={<Cart/>}/>
+                        <Route path="/*" element=<HotFound/>/>
+                        <Route path="/feedback" element={<Appp/>}/>
+                    </Routes>
+                    <Footer/>
+                </CartProvider>
+            </ThemeProvider>
         </>
     );
 }
